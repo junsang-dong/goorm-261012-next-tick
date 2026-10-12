@@ -1,0 +1,12 @@
+node_modules/
+.vite/
+out/
+coverage/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.mobileprovision

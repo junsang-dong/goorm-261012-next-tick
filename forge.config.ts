@@ -1,4 +1,5 @@
 import type { ForgeConfig } from '@electron-forge/shared-types';
+import { MakerDMG } from '@electron-forge/maker-dmg';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { VitePlugin } from '@electron-forge/plugin-vite';
 
@@ -9,7 +10,19 @@ const config: ForgeConfig = {
     asar: true,
   },
   rebuildConfig: {},
-  makers: [new MakerZIP({}, ['darwin'])],
+  makers: [
+    new MakerDMG({
+      format: 'ULFO',
+      overwrite: true,
+      title: 'NextTick 1.0.0',
+      iconSize: 96,
+      additionalDMGOptions: {
+        'background-color': '#050505',
+        window: { size: { width: 540, height: 360 } },
+      },
+    }),
+    new MakerZIP({}, ['darwin']),
+  ],
   plugins: [
     new VitePlugin({
       build: [

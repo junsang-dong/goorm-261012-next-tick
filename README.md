@@ -7,6 +7,12 @@
 
 NextTick은 macOS 작업 화면 한쪽에 두고 빠르게 사용하는 오프라인 미니 집중 타이머입니다. React·TypeScript·Vite 기반 UI와 Electron 메인 프로세스의 타이머 엔진을 결합해, 창을 숨기거나 최소화해도 정확한 종료 시각을 유지합니다.
 
+## 다운로드
+
+[**NextTick 1.0.0 for Apple Silicon 다운로드 (.dmg)**](https://github.com/junsang-dong/goorm-261012-next-tick/releases/download/v1.0.0/NextTick-1.0.0-arm64.dmg)
+
+DMG를 연 뒤 **NextTick**을 **Applications** 폴더로 드래그하세요. 현재 배포본은 Apple Developer ID 서명·공증을 적용하지 않은 수업용 빌드입니다. 최초 실행이 차단되면 Finder의 응용 프로그램 폴더에서 NextTick을 Control-클릭하고 **열기**를 선택하세요. 시스템 전체의 Gatekeeper를 비활성화할 필요는 없습니다.
+
 ## 주요 기능
 
 - 15·30·45·90분 프리셋과 분·초 직접 입력
@@ -72,6 +78,7 @@ npm start
 npm run typecheck
 npm test
 npm run package -- --platform=darwin --arch=arm64
+npm run make -- --platform=darwin --arch=arm64
 ```
 
 Apple Silicon 앱은 다음 경로에 생성됩니다.
@@ -86,7 +93,7 @@ out/NextTick-darwin-arm64/NextTick.app
 open "out/NextTick-darwin-arm64/NextTick.app"
 ```
 
-Intel Mac용은 `--arch=x64`를 사용하며 실제 Intel 기기 검증이 별도로 필요합니다. ZIP 배포 산출물은 `npm run make`로 생성할 수 있습니다.
+Intel Mac용은 `--arch=x64`를 사용하며 실제 Intel 기기 검증이 별도로 필요합니다. `npm run make`는 DMG와 ZIP 배포 산출물을 생성합니다.
 
 ## 사용법
 
